@@ -1,0 +1,26 @@
+@mixin flex ($flex, $jc, $ai) {
+  display: $flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin navLink ($color, $fs, $fw, $tt) {
+  color: $color;
+  font-size: $fs;
+  font-weight: $fw;
+  text-transform: $tt;
+}
+
+@mixin basketAuth {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  border: 1px solid #FFF;
+  background: rgba(255, 255, 255, 0.36);
+  backdrop-filter: blur(8px);
+  padding: 10px;
+}

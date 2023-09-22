@@ -1,0 +1,174 @@
+@use '../../styles/variables.scss';
+@use '../../styles/mixins.scss';
+
+.elevating {
+  padding: 0 10px 15px 10px;
+  &_main-bg {
+    background: variables.$main-bg;
+  }
+
+  &__content {
+    @include mixins.flex(flex, center, center);
+    flex-direction: column
+  }
+
+  &__sub-block {
+    @include mixins.flex(flex, center, flex-start);
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__mini-block {
+    @include mixins.flex(flex, flex-start, center);
+  }
+
+  &__h1 {
+    font-size: variables.$font-size16;
+    font-weight: variables.$font-weight600;
+    text-transform: capitalize;
+    background: variables.$bg-elev;
+    background-clip: text;
+  }
+
+  &__apple1 {
+    width: 150px;
+    height: 50px;
+    object-fit: cover;
+  }
+
+  &__apple2 {
+    width: 151px;
+    height: 57px;
+    object-fit: cover;
+  }
+
+  &__text {
+    color: variables.$link;
+    font-size: variables.$font-size16;
+    font-weight: variables.$font-weight400;
+    line-height: 22px;
+    text-transform: capitalize;
+    margin-top: 20px;
+  }
+  &__slider {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.button {
+  &_center {
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+ .elevating {
+  &__wrapper {
+    position: relative;
+    @include mixins.flex(flex, flex-start, flex-start);
+    z-index: 4;
+  }
+
+  &__content {
+    width: 400px;
+    align-items: flex-start;
+  }
+
+  &__slider {
+    position: absolute;
+    right: 0;
+    top: -120px;
+    width: 342px;
+    height: 480px;
+    margin: 0 auto;
+    margin-top: 20px;
+    z-index: -21;
+    img {
+      object-fit: contain;
+    }
+  }
+ }
+
+ .button {
+  &_center {
+    margin: initial;
+    margin-top: 20px;
+  }
+}
+}
+
+@media (min-width: 992px) {
+  .elevating {
+    padding: 0 60px 80px 60px;
+    &__slider {
+      right: 0;
+      top: -82px;
+      width: 439px;
+      height: 443px;
+      margin-top: 0px;
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .elevating {
+    &__h1 {
+      font-size: 48px;
+    }
+
+    &__content {
+      width: 538px;
+      margin-top: 140px;
+    }
+
+    &__sub-block {
+      gap: 24px;
+    }
+
+    &__text {
+      margin-top: 48px;
+    }
+
+    &__slider {
+      right: 0px;
+      top: -106px;
+      width: 487px;
+      height: 627px;
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+  .button {
+    &_center {
+      margin-top: 48px;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .elevating {
+    &_main-bg {
+     min-height: 880px;
+    }
+
+    &__slider {
+      right: 0px;
+      top: -156px;
+      width: 683px;
+      height: 987px;
+    }
+  }
+}

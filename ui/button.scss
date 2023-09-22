@@ -1,0 +1,19 @@
+@use '../styles/variables.scss';
+@use '../styles/mixins.scss';
+
+.button {
+  @include mixins.flex(flex, center, center);
+  width: 165px;
+  height: 48px;
+  padding: 0px 24px;
+  gap: 10px;
+  border-radius: 12px;
+  border: 1px solid variables.$white;
+  background: variables.$backg-button;
+  box-shadow: variables.$color-shadow;
+  cursor: pointer;
+  color: variables.$content-button;
+  font-size: variables.$font-size16;
+  font-weight: variables.$font-weight500;
+  text-transform: capitalize;
+}

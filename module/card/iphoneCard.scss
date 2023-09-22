@@ -1,0 +1,96 @@
+@use "../../styles/variables.scss";
+@use "../../styles/mixins.scss";
+
+.card {
+  @include mixins.flex(flex, center, center);
+  padding: 24px;
+  gap: 10px;
+  border-radius: 20px;
+  background: variables.$white;
+  box-shadow: variables.$card-shadow;
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__title-price {
+    top: 4px;
+    position: absolute;
+  }
+
+  &__title {
+    color: variables.$iphone-title;
+    font-size: variables.$font-size24;
+    font-weight: variables.$font-weight500;
+  }
+
+  &__price {
+    margin-top: 12px;
+  }
+
+  &__img {
+    width: 264px;
+    height: 344px;
+    object-fit: cover;
+  }
+
+  .button {
+    &_wh {
+      width: 140px;
+      position: absolute;
+      right: 0;
+      bottom: 6px;
+    }
+  }
+}
+
+@media(min-width: 1200px) {
+  .card {
+    padding: 17px;
+
+    &__img {
+      width: 229px;
+      height: 282px;
+    }
+
+    &__title {
+      font-size: variables.$font-size19;
+    }
+    .button {
+      font-size: variables.$font-size14;
+      &_wh {
+        width: 119px;
+        height: 41px;
+        right: 0;
+        bottom: 1px;
+      }
+    }
+  }
+
+}
+
+@media(min-width: 1400px) {
+  .card {
+    padding: 17px;
+
+    &__img {
+      width: 264px;
+      height: 344px;
+    }
+
+    &__title {
+      font-size: variables.$font-size24;
+    }
+    .button {
+      font-size: variables.$font-size16;
+      &_wh {
+        width: 140px;
+        height: 48px;
+        position: absolute;
+        right: 0;
+        bottom: 6px;
+      }
+    }
+  }
+
+}

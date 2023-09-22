@@ -1,0 +1,90 @@
+@use "../../styles/variables.scss";
+@use "../../styles/mixins.scss";
+
+.iphone {
+  padding: 20px 5px 20px 5px;
+  &_bg {
+    position: relative;
+    background: variables.$main-bg;
+    z-index: 0;
+  }
+  
+  &__main-bg {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 236px;
+    background: url('/images/bgIphone.png') center top/contain no-repeat;
+    z-index: -2;
+  }
+
+  &__title-block {
+    @include mixins.flex(flex, space-between, center);
+  }
+
+  &__see-all {
+    color: variables.$link-active;
+    font-size: variables.$font-size16;
+    font-weight: variables.$font-weight500;
+    text-transform: capitalize;
+    @include mixins.flex(flex, center, center);
+    text-decoration: none;
+    gap: 10px;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 312px;
+    grid-template-rows: auto;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    z-index: 3;
+  }
+}
+
+@media (min-width: 768px) {
+ .iphone {
+    &__wrapper {
+    grid-template-columns: repeat(2, 300px);
+  }
+ }
+}
+
+@media(min-width: 992px) {
+  .iphone {
+    padding: 20px 5px 80px 5px;
+    &__main-bg {
+      display: initial;
+    }
+
+    &__wrapper {
+      grid-template-columns: repeat(2, 300px);
+    }
+  }
+}
+
+
+@media(min-width: 1200px) {
+  .iphone {
+
+    &__wrapper {
+      grid-template-columns: repeat(4, 262px);
+      margin-top: 53px;
+    }
+  }
+}
+
+@media(min-width: 1400px) {
+  .iphone {
+    padding: 42px 60px 20px 60px;
+    &__wrapper {
+      grid-template-columns: repeat(4, 315px);
+    }
+  }
+}

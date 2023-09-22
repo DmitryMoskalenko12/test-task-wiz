@@ -1,0 +1,288 @@
+@use "../../styles/variables.scss";
+@use "../../styles/mixins.scss";
+
+.stream {
+  padding: 20px 5px 20px 5px;
+
+  &_bg {
+   background: variables.$main-bg;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  &__title-name {
+    position: absolute;
+  }
+
+  &__name {
+    font-size: variables.$font-size9;
+    margin-top: 5px;
+  }
+
+  &__title {
+    color: variables.$iphone-title;
+    font-weight: variables.$font-weight500;
+    font-size: variables.$font-size9;
+  }
+
+  &__title-slide1 {
+    position: absolute;
+    width: 200px;
+    left: -112%;
+    top: 21%;
+    z-index: 20;
+    transform: rotate(-90deg);
+    @include mixins.slideStyle;
+  }
+
+  &__title-slide2 {
+    position: absolute;
+    width: 200px;
+    left: -112%;
+    top: 26%;
+    z-index: 20;
+    transform: rotate(-90deg);
+    @include mixins.slideStyle;
+  }
+
+  &__title-slide3 {
+    position: absolute;
+    width: 200px;
+    left: -112%;
+    top: 47%;
+    z-index: 20;
+    transform: rotate(-90deg);
+    @include mixins.slideStyle;
+  }
+
+  &__title-slide4 {
+    position: absolute;
+    width: 200px;
+    left: -112%;
+    top: 29%;
+    z-index: 20;
+    transform: rotate(-90deg);
+    @include mixins.slideStyle;
+  }
+
+  &__slide {
+    position: relative;
+    width: 60px;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    &:nth-child(1) {
+      order: 1;
+    }
+    &:nth-child(2) {
+      order: 2;
+    }
+    &:nth-child(4) {
+      order: 4;
+    }
+    &:nth-child(5) {
+      order: 5;
+    }
+  }
+
+  &__slide-show {
+    position: relative;
+    order: 0;
+    width: 300px;
+    height: auto;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  &__button {
+    @include mixins.flex(flex, center, center);
+    background: variables.$link-active;
+    width: 61px;
+    height: 19px;
+    font-size: 7px;
+    position: absolute;
+    right: -1px;
+    border-radius: 12px;
+    bottom: 3px;
+    color: variables.$content-button;
+    border: none;
+    gap: 1px;
+    cursor: pointer;
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
+
+@media(min-width: 768px) {
+  .stream {
+    &__wrapper {
+      @include mixins.flex(flex, center, center);
+      flex-wrap: wrap;
+      gap: 17px;
+      width: initial;
+      margin: 0 auto;
+    }
+
+    &__slide {
+      width: 45px;
+    }
+
+    &__title-slide1 {
+      left: -166%;
+      top: 12%;
+      font-size: 16px;
+    }
+  
+    &__title-slide2 {
+      left: -171%;
+      top: 19%;
+      font-size: 16px;
+    }
+  
+    &__title-slide3 {
+      left: -171%;
+      top: 41%;
+      font-size: 16px;
+    }
+  
+    &__title-slide4 {
+      left: -168%;
+      top: 22%;
+      font-size: 16px;
+    }
+
+    &__slide-show {
+      order: 2;
+      width: 367px;
+    }
+
+    &__title {
+      font-size: 12px;
+    }
+
+    &__name {
+      font-size: 9px;
+      margin-top: 4px;
+    }
+
+    &__button {
+      width: 76px;
+      height: 23px;
+      font-size: 8px;
+      bottom: 3px;
+      gap: 1px;
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+}
+
+@media(min-width: 1200px) {
+  .stream {
+    &__wrapper {
+      gap: 24px;
+    }
+
+    &__slide {
+      width: 88px;
+    }
+
+    &__title-slide1 {
+      left: -62%;
+      top: 31%;
+      font-size: 24px;
+    }
+  
+    &__title-slide2 {
+      left: -62%;
+      top: 36%;
+      font-size: 24px;
+    }
+  
+    &__title-slide3 {
+      left: -79%;
+      top: 46%;
+      font-size: 24px;
+      width: 230px;
+    }
+  
+    &__title-slide4 {
+      left: -62%;
+      top: 35%;
+      font-size: 24px;
+    }
+
+    &__slide-show {
+      width: 661px;
+    }
+
+    &__title {
+      margin-top: 8px;
+      font-size: 16px;
+    }
+
+    &__name {
+      font-size: 13px;
+      margin-top: 9px;
+    }
+
+    &__button {
+      width: 134px;
+      padding: 0 14px;
+      height: 42px;
+      font-size: 13px;
+      bottom: 2px;
+      gap: 6px;
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+@media(min-width: 1440px) {
+  .stream {
+    padding: 80px 60px;
+    &__wrapper {
+      gap: 19px;
+    }
+
+    &__slide-show {
+      width: 872px;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__name {
+      font-size: 16px;
+    }
+
+    &__button {
+      width: 177px;
+      padding: 0 24px;
+      height: 48px;
+      font-size: 16px;
+      bottom: 5px;
+    }
+  }
+}

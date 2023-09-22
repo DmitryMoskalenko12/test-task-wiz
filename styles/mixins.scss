@@ -24,3 +24,9 @@
   backdrop-filter: blur(8px);
   padding: 10px;
 }
+
+@mixin slideStyle {
+  color: #FFF;
+  font-size: 19px;
+  font-weight: 500;
+}

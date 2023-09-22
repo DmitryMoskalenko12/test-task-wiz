@@ -9,6 +9,7 @@ import '../components/elevating/elevating.scss';
 import '../components/iphone/iphone.scss';
 import '../module/card/iphoneCard.scss';
 import '../components/products/products.scss';
+import '../components/stream/stream.scss';
 
 import Head from 'next/head';
 import Layout from '@/components/layout/layout';

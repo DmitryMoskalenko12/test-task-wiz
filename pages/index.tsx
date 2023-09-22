@@ -2,6 +2,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Elevating from '@/components/elevating/elevating';
 import Iphone from '@/components/iphone/iphone';
 import Products from '@/components/products/products';
+import Stream from '@/components/stream/stream';
 
 export default function Home() {
 
@@ -10,6 +11,7 @@ export default function Home() {
       <Elevating/>
       <Iphone/>
       <Products/>
+      <Stream/>
     </>
   )
 }

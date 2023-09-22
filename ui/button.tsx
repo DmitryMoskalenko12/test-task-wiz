@@ -1,7 +1,7 @@
 interface IProps {
   content: string;
-  clazz: string;
-  onClick: () => void;
+  clazz?: string;
+  onClick?: () => void;
 }
 
 const Button: React.FC<IProps> = ({content, clazz, onClick}) => {

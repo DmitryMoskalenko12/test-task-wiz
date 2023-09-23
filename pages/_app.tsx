@@ -10,6 +10,7 @@ import '../components/iphone/iphone.scss';
 import '../module/card/iphoneCard.scss';
 import '../components/products/products.scss';
 import '../components/stream/stream.scss';
+import '../components/links-section/links-section.scss';
 
 import Head from 'next/head';
 import Layout from '@/components/layout/layout';

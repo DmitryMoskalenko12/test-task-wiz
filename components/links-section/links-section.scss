@@ -1,0 +1,37 @@
+@use "../../styles/variables.scss";
+@use "../../styles/mixins.scss";
+
+.links {
+  padding: 24px 5px 6px 5px;
+  &_bg {
+    background: variables.$link-active;
+  }
+
+  &__slider {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    row-gap: 0;
+  }
+
+  &__slider::-webkit-scrollbar {
+    width: 0;
+  }
+
+  &__link {
+    @include mixins.flex(flex, center,center);
+    min-width: fit-content;
+    height: 48px;
+    color: variables.$link-color;
+    font-size: variables.$font-size16;
+    font-weight:  variables.$font-weight500;
+    background: transparent;
+    border-radius: 36px;
+    border: 1px solid variables.$link;
+    box-shadow: variables.$prod-bshadow;
+    padding: 0px 24px;
+    cursor: pointer;
+    text-transform: capitalize;
+    text-decoration: none;
+  }
+}

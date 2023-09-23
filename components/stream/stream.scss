@@ -112,7 +112,7 @@
     background: variables.$link-active;
     width: 61px;
     height: 19px;
-    font-size: 7px;
+    font-size: variables.$font-size7;
     position: absolute;
     right: -1px;
     border-radius: 12px;
@@ -145,25 +145,25 @@
     &__title-slide1 {
       left: -166%;
       top: 12%;
-      font-size: 16px;
+      font-size: variables.$font-size16;
     }
   
     &__title-slide2 {
       left: -171%;
       top: 19%;
-      font-size: 16px;
+      font-size: variables.$font-size16;
     }
   
     &__title-slide3 {
       left: -171%;
       top: 41%;
-      font-size: 16px;
+      font-size: variables.$font-size16;
     }
   
     &__title-slide4 {
       left: -168%;
       top: 22%;
-      font-size: 16px;
+      font-size: variables.$font-size16;
     }
 
     &__slide-show {
@@ -172,18 +172,18 @@
     }
 
     &__title {
-      font-size: 12px;
+      font-size: variables.$font-size12;
     }
 
     &__name {
-      font-size: 9px;
+      font-size: variables.$font-size9;
       margin-top: 4px;
     }
 
     &__button {
       width: 76px;
       height: 23px;
-      font-size: 8px;
+      font-size: variables.$font-size8;
       bottom: 3px;
       gap: 1px;
       svg {
@@ -207,26 +207,26 @@
     &__title-slide1 {
       left: -62%;
       top: 31%;
-      font-size: 24px;
+      font-size: variables.$font-size24;
     }
   
     &__title-slide2 {
       left: -62%;
       top: 36%;
-      font-size: 24px;
+      font-size: variables.$font-size24;
     }
   
     &__title-slide3 {
       left: -79%;
       top: 46%;
-      font-size: 24px;
+      font-size: variables.$font-size24;
       width: 230px;
     }
   
     &__title-slide4 {
       left: -62%;
       top: 35%;
-      font-size: 24px;
+      font-size: variables.$font-size24;
     }
 
     &__slide-show {
@@ -235,11 +235,11 @@
 
     &__title {
       margin-top: 8px;
-      font-size: 16px;
+      font-size: variables.$font-size16;
     }
 
     &__name {
-      font-size: 13px;
+      font-size: variables.$font-size13;
       margin-top: 9px;
     }
 
@@ -247,7 +247,7 @@
       width: 134px;
       padding: 0 14px;
       height: 42px;
-      font-size: 13px;
+      font-size: variables.$font-size13;
       bottom: 2px;
       gap: 6px;
       svg {
@@ -270,18 +270,18 @@
     }
 
     &__title {
-      font-size: 24px;
+      font-size: variables.$font-size24;
     }
 
     &__name {
-      font-size: 16px;
+      font-size: variables.$font-size16;
     }
 
     &__button {
       width: 177px;
       padding: 0 24px;
       height: 48px;
-      font-size: 16px;
+      font-size: variables.$font-size16;
       bottom: 5px;
     }
   }

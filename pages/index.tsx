@@ -3,6 +3,7 @@ import Elevating from '@/components/elevating/elevating';
 import Iphone from '@/components/iphone/iphone';
 import Products from '@/components/products/products';
 import Stream from '@/components/stream/stream';
+import LinksSection from '@/components/links-section/links-section';
 
 export default function Home() {
 
@@ -12,6 +13,7 @@ export default function Home() {
       <Iphone/>
       <Products/>
       <Stream/>
+      <LinksSection/>
     </>
   )
 }

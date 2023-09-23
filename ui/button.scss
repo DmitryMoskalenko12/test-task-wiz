@@ -3,7 +3,7 @@
 
 .button {
   @include mixins.flex(flex, center, center);
-  width: 165px;
+  width: fit-content;
   height: 48px;
   padding: 0px 24px;
   gap: 10px;
@@ -16,4 +16,18 @@
   font-size: variables.$font-size16;
   font-weight: variables.$font-weight500;
   text-transform: capitalize;
+  transition: variables.$transition;
+}
+
+@media(min-width: 992px) {
+  .button {
+    transition: variables.$transition;
+    &:hover {
+      transition: variables.$transition;
+      background: variables.$but-hover;
+    }
+    &:active {
+      background: variables.$but-active;
+    }
+  }
 }

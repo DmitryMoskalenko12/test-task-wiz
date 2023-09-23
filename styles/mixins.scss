@@ -1,3 +1,5 @@
+@use './variables.scss';
+
 @mixin flex ($flex, $jc, $ai) {
   display: $flex;
   justify-content: $jc;
@@ -19,14 +21,42 @@
   align-items: center;
   gap: 10px;
   border-radius: 12px;
-  border: 1px solid #FFF;
+  border: 1px solid variables.$white;
   background: rgba(255, 255, 255, 0.36);
   backdrop-filter: blur(8px);
   padding: 10px;
 }
 
 @mixin slideStyle {
-  color: #FFF;
+  color: variables.$white;
   font-size: 19px;
   font-weight: 500;
+}
+
+@mixin choice {
+  width: fit-content;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+@mixin navStyle {
+  position: fixed;
+  width: 50vw;
+  height: 100vh;
+  background: variables.$nav-backg;
+  left: -100%;
+  top:0;
+  transition: 0.5s all;
+}
+
+@mixin hoverActive {
+  transition: variables.$transition;
+  &:hover {
+    transition: variables.$transition;
+    color: variables.$link-hover
+  }
+  &:active {
+    color: variables.$but-active;
+  }
 }

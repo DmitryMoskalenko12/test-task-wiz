@@ -40,7 +40,7 @@ const Products = () => {
       <div className="products__slider">
         {
           arrButtonSlider.map(({content, id}) => {
-            return <button onClick={() => setActive(id)} className={cn("products__slide-but", {['products_active']: active === id})} key={id}>{content}</button>
+            return <button onClick={() => setActive(id)} className={cn("products__slide-but", {['products__slide-but_active']: active === id})} key={id}>{content}</button>
           })
         }
       </div>

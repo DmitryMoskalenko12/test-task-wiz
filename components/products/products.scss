@@ -71,15 +71,15 @@
     padding: 0px 24px;
     cursor: pointer;
     text-transform: capitalize;
+      &_active {
+      color: variables.$content-button;
+      font-size: variables.$font-size16;
+      font-weight: variables.$font-weight500;
+      text-transform: capitalize;
+      background: variables.$link-active;
+    }
  }
 
-  &_active {
-    color: variables.$content-button;
-    font-size: variables.$font-size16;
-    font-weight: variables.$font-weight500;
-    text-transform: capitalize;
-    background: variables.$link-active;
-  }
 }
 
 @media (min-width: 768px) {
@@ -89,11 +89,11 @@
   }
 
   &__title {
-    font-size: variables.$font-size36;
+    font-size: variables.$font-size26;
   }
 
   &__part-title {
-    font-size: variables.$font-size36;
+    font-size: variables.$font-size26;
   }
  }
 }
@@ -107,6 +107,39 @@
     &__wrapper {
       grid-template-columns: repeat(2, 300px);
     }
+
+    &__title {
+      font-size: variables.$font-size36;
+    }
+  
+    &__part-title {
+      font-size: variables.$font-size36;
+    }
+
+    &__slide-but {
+      transition: variables.$transition;
+      &:hover {
+        transition: variables.$transition;
+        background: variables.$but-hover2;
+        color: variables.$white;
+      }
+  
+      &:active {
+        background: variables.$but-active;
+      }
+  
+      text-transform: capitalize;
+        &_active {
+          transition: variables.$transition;
+        &:hover {
+          transition: variables.$transition;
+          background: variables.$but-hover;
+        }
+        &:active {
+          background: variables.$but-active;
+        }
+      }
+   }
   }
 }
 

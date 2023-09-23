@@ -33,5 +33,31 @@
     cursor: pointer;
     text-transform: capitalize;
     text-decoration: none;
+    transition: variables.$transition;
+    &:hover {
+      transition: variables.$transition;
+      background: variables.$but-hover;
+    }
+    &:active {
+      background: variables.$but-active;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .links {
+    padding: 24px 60px 24px 60px;
+    &__slider {
+      gap: 10px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .links {
+    &__slider {
+    gap: 33px;
+    justify-content: center;
+    }
   }
 }

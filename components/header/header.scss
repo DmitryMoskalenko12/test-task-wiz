@@ -14,23 +14,24 @@
   }
 
   &__nav {
-    position: fixed;
-    width: 50vw;
-    height: 100vh;
-    background: variables.$nav-backg;
+    position: relative;
+    @include mixins.navStyle;
     left: -100%;
-    top: 0;
-    transition: variables.$transition;
+  }
+  
+  &__close {
+    position: absolute;
+    border: none;
+    background: transparent;
+    font-size: 36px;
+    font-weight: 400;
+    right: 14px;
+    cursor: pointer;
   }
 
   &__nav_active {
-    position: fixed;
-    width: 50vw;
-    height: 100vh;
-    background: variables.$nav-backg;
+    @include mixins.navStyle;
     left: 0;
-    top: 0;
-    transition: variables.$transition;
     z-index: 20;
   }
 
@@ -110,9 +111,8 @@
 
   &__search {
     @include mixins.flex(flex, center, center);
-    width: 150px;
     height: 48px;
-    padding: 0px 16px;
+    padding: 0 0 0 35px;
     gap: 12px;
     border-radius: 12px;
     border: 1px solid variables.$white;
@@ -124,6 +124,17 @@
       font-weight: variables.$font-weight400;
       text-transform: capitalize;
     }
+  }
+
+  &__input-wrap {
+    position: relative;
+  }
+
+  &__lup {
+    position: absolute;
+    top: 12px;
+    left: 7px;
+    cursor: pointer;
   }
 }
 
@@ -147,6 +158,10 @@
         right: -7px;
       }
     }
+    
+    &__close {
+      display: none;
+    }
 
     &__nav-link {
       font-size: variables.$font-size15;
@@ -162,12 +177,12 @@
       gap: 10px;
     }
 
-    &__basket-nav {
-      display: none;
-    }
+    $navs: basket, auth;
 
-    &__auth-nav {
-      display: none;
+    @each $nav in $navs {
+      &__#{$nav}-nav {
+        display: none;
+      }
     }
 
     &__basket {
@@ -188,6 +203,10 @@
   .header {
     &__search {
       width: 230px;
+    }
+
+    &__nav-link {
+      @include mixins.hoverActive;
     }
   }
 }

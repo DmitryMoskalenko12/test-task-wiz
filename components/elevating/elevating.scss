@@ -125,7 +125,7 @@
 @media (min-width: 1200px) {
   .elevating {
     &__h1 {
-      font-size: 48px;
+      font-size: variables.$font-size45;
     }
 
     &__content {

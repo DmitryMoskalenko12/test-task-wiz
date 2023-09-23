@@ -1,0 +1,251 @@
+@use '../../styles/variables.scss';
+@use '../../styles/mixins.scss';
+
+.footer {
+  padding: 20px 5px 20px 5px;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    row-gap: 20px;
+    column-gap: 30px;
+    justify-content: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  &__title {
+    color: variables.$iphone-title;
+    font-size: variables.$font-size18;
+    font-weight: variables.$font-weight600;
+  }
+
+  &__link {
+    color: variables.$link;
+    font-size: variables.$font-size16;
+    font-weight: variables.$font-weight500;
+    text-decoration: none;
+    padding: 15px 0 15px 0;
+  }
+
+  $selectors: 'three-block', 'wallet-account';
+
+  @each $selector in $selectors {
+    &__#{$selector} {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__incorp-block {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__copyr {
+    color: variables.$iphone-title;
+    font-size: variables.$font-size14;
+    font-weight: variables.$font-weight400;
+    text-align: center;
+  }
+  
+  &__incorp-block {
+    @include mixins.flex(flex, center, center);
+    flex-direction: column-reverse;
+    gap: 15px;
+  }
+
+  &__hr {
+   margin-top: 30px;
+   margin-bottom: 30px;
+   border-color: variables.$border-right;
+  }
+
+  &__incor-list {
+    @include mixins.flex(flex, center, center);
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__incor-link {
+    display: block;
+    padding: 0 10px;
+    color: variables.$link;
+    font-size: variables.$font-size16;
+    font-weight: variables.$font-weight500;
+    text-decoration: none;
+  }
+
+  &__change-lang {
+    @include mixins.flex(flex, center, center);
+    @include mixins.choice;
+    margin: 0 auto;
+  }
+
+  &__butt-wrap {
+    position: relative;
+  }
+
+  &__popup {
+   position: absolute;
+   left: 2px;
+   width: 122px;
+   flex-direction: column;
+   padding: 5px;
+   background: variables.$nav-backg;
+   opacity: 0;
+   pointer-events: none;
+   border-radius: 10px;
+   transition: variables.$transition;
+   &_active {
+    transition: variables.$transition;
+    pointer-events: all;
+    height: fit-content;
+    opacity: 1;
+   }
+  }
+
+  &__lang-choice {
+    display: block;
+    color: variables.$link;
+    font-size: variables.$font-size14;
+    padding: 5px 5px;
+    font-weight: variables.$font-weight500;
+    text-decoration: none;
+  }
+}
+
+@media(min-width: 768px) {
+  .footer {
+    padding: 20px 5px 20px 5px;
+  
+    &__wrapper {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__incorp-block {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0;
+    }
+
+    &__copyr {
+      font-size: variables.$font-size10;
+    }
+
+    &__incor-list {
+      @include mixins.flex(flex, space-between, center);
+      flex-direction: row;
+      gap: 0;
+      li {
+        border-right: 1px solid variables.$border-right;
+      }
+
+      li:nth-child(5) {
+        border-right: none;
+      }
+    }
+
+    &__incor-link {
+      font-size: variables.$font-size10;
+      text-align: center;
+    }
+
+    &__change-lang {
+      font-size: variables.$font-size10;
+      margin: initial;
+    }
+
+    &__popup {
+      top: -60px;
+      left: -1px;
+      &_active {
+        top: -60px;
+        left: -1px;
+      }
+    }
+
+    &__lang-choice {
+      font-size: variables.$font-size10;
+    }
+  }
+}
+
+@media(min-width: 992px) {
+  .footer {
+    @for $i from 1 through 3 {
+      &__copyr,
+      &__incor-link,
+      &__change-lang {
+        &:nth-child(#{$i}) {
+          font-size: variables.$font-size14;
+        }
+      }
+    }
+
+    &__popup {
+      width: 120px;
+      top: -65px;
+      left: 0;
+    }
+
+    &__lang-choice {
+      font-size: variables.$font-size12;
+      @include mixins.hoverActive;
+    }
+
+    &__link {
+      @include mixins.hoverActive;
+    }
+
+    &__incor-link {
+      @include mixins.hoverActive;
+    }
+    
+    &__change-lang {
+      @include mixins.hoverActive;
+    }
+  }
+}
+
+@media(min-width: 1200px) {
+  .footer {
+    padding: 24px 60px 24px 60px;
+  
+    &__wrapper {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    @for $i from 1 through 3 {
+      &__incor-link,
+      &__change-lang {
+        &:nth-child(#{$i}) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &__popup {
+      width: 130px;
+      left: 5px;
+    }
+  }
+}
+
+@media(min-width: 1440px) {
+  .footer {
+   &__incor-list {
+    margin-right: 245px;
+   }
+
+  &__lang-choice {
+    font-size: variables.$font-size14;
+  }
+  }
+}

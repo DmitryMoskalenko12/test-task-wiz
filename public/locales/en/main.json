@@ -11,7 +11,7 @@
   "order": "Pre-order Now",
   "from": "from",
   "details": "details",
-  "get-your": "Get Your iPhone",
+  "get-your": "Get Your",
   "see-all": "See All",
   "explore": "Explore in",
   "product": "Products",
@@ -31,6 +31,66 @@
   "investor": "Investor",
   "ethic-compliance": "Ethic & Compliance",
   "events": "Events",
-  "contact-apple": "Contact Apple"
+  "contact-apple": "Contact Apple",
+
+  "shop-learn": "Shop & Learn",
+  "store": "Store",
+  "gift-cards": "Gift Cards",
+
+  "find-a-store": "Find a Store",
+  "genius-bar": "Genius Bar",
+  "today-at-apple": "Today at Apple",
+  "apple-store-app": "Apple Store App",
+  "certified-refurbished": "Certified Refurbished",
+  "financing": "Financing",
+  "carrier-deals-at-apple": "Carrier Deals at Apple",
+  "order-status": "Order Status",
+  "shopping-help": "Shopping Help",
+
+  "for-business": "For Business",
+  "apple-and-business": "Apple and Business",
+  "shop-for-business": "Shop for Business",
+
+  "for-education": "For Education",
+  "apple-and-education": "Apple and Education",
+  "shop-for-K-12": "Shop for K-12",
+  "shop-for-college": "Shop for College",
+
+  "for-healthcare": "For Healthcare",
+  "apple-in-healthcare": "Apple in Healthcare",
+  "health-on-apple-watch": "Health on Apple Watch",
+  "health-records-on-iPhone": "Health Records on iPhone",
+
+  "apple-music": "Apple Music",
+  "apple-arcade": "Apple Arcade",
+  "apple-fitness+": "Apple Fitness+",
+  "apple-news+": "Apple News+",
+  "apple-podcasts": "Apple Podcasts",
+  "apple-books": "Apple Books",
+
+  "apple-wallet": "Apple Wallet",
+  "wallet": "Wallet",
+  "apple-card": "Apple Card",
+  "apple-pay": "Apple Pay",
+  "apple-cash": "Apple Cash",
+
+  "account": "Account",
+  "manage-your-apple-ID": "Manage Your Apple ID",
+  "apple-store-account": "Apple Store Account",
+  "iCloud-com": "iCloud.com",
+
+  "copyright": "Copyright",
+  "all-rights-reserved": "All rights reserved",
+  "privacy-policy": "Privacy Policy",
+  "terms-of-use": "Terms of Use",
+  "sales-and-refunds": "Sales and Refunds",
+  "legal": "Legal",
+  "site-map": "Site Map",
+  "USA,-English": "USA, English",
+  "UKR,-ukrainian": "USA, Ukrainian",
+  "english": "English",
+  "ukrainian": "Ukrainian"
+
+
 
 }

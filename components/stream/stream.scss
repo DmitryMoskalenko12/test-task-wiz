@@ -33,44 +33,27 @@
     font-size: variables.$font-size9;
   }
 
-  &__title-slide1 {
-    position: absolute;
-    width: 200px;
-    left: -112%;
-    top: 21%;
-    z-index: 20;
-    transform: rotate(-90deg);
-    @include mixins.slideStyle;
-  }
-
-  &__title-slide2 {
-    position: absolute;
-    width: 200px;
-    left: -112%;
-    top: 26%;
-    z-index: 20;
-    transform: rotate(-90deg);
-    @include mixins.slideStyle;
-  }
-
-  &__title-slide3 {
-    position: absolute;
-    width: 200px;
-    left: -112%;
-    top: 47%;
-    z-index: 20;
-    transform: rotate(-90deg);
-    @include mixins.slideStyle;
-  }
-
-  &__title-slide4 {
-    position: absolute;
-    width: 200px;
-    left: -112%;
-    top: 29%;
-    z-index: 20;
-    transform: rotate(-90deg);
-    @include mixins.slideStyle;
+  @for $i from 1 through 4 {
+    $topValue: 21%;
+    @if $i == 2 {
+      $topValue: 26%;
+    }
+    @else if $i == 3 {
+      $topValue: 47%;
+    }
+    @else if $i == 4 {
+      $topValue: 29%;
+    }
+  
+    &__title-slide#{$i} {
+      position: absolute;
+      width: 200px;
+      left: -112%;
+      top: $topValue;
+      z-index: 20;
+      transform: rotate(-90deg);
+      @include mixins.slideStyle;
+    }
   }
 
   &__slide {
@@ -110,11 +93,12 @@
   &__button {
     @include mixins.flex(flex, center, center);
     background: variables.$link-active;
-    width: 61px;
+    width: fit-content;
     height: 19px;
     font-size: variables.$font-size7;
     position: absolute;
     right: -1px;
+    padding: 5px;
     border-radius: 12px;
     bottom: 3px;
     color: variables.$content-button;
@@ -142,28 +126,29 @@
       width: 45px;
     }
 
-    &__title-slide1 {
-      left: -166%;
-      top: 12%;
-      font-size: variables.$font-size16;
-    }
-  
-    &__title-slide2 {
-      left: -171%;
-      top: 19%;
-      font-size: variables.$font-size16;
-    }
-  
-    &__title-slide3 {
-      left: -171%;
-      top: 41%;
-      font-size: variables.$font-size16;
-    }
-  
-    &__title-slide4 {
-      left: -168%;
-      top: 22%;
-      font-size: variables.$font-size16;
+    @for $i from 1 through 4 {
+      $leftValue: -166%;
+      $topValue: 12%;
+      $fontSize: variables.$font-size16;
+    
+      @if $i == 2 {
+        $leftValue: -171%;
+        $topValue: 19%;
+      }
+      @else if $i == 3 {
+        $leftValue: -171%;
+        $topValue: 41%;
+      }
+      @else if $i == 4 {
+        $leftValue: -168%;
+        $topValue: 22%;
+      }
+    
+      &__title-slide#{$i} {
+        left: $leftValue;
+        top: $topValue;
+        font-size: $fontSize;
+      }
     }
 
     &__slide-show {
@@ -189,6 +174,21 @@
       svg {
         width: 14px;
         height: 14px;
+      }
+    }
+  }
+}
+
+@media(min-width: 992px) {
+  .stream {
+    &__button {
+      transition: variables.$transition;
+      &:hover {
+        transition: variables.$transition;
+        background: variables.$but-hover;
+      }
+      &:active {
+        background: variables.$but-active;
       }
     }
   }

@@ -23,7 +23,21 @@
   }
 
   &__title-block {
-    @include mixins.flex(flex, space-between, center);
+    @include mixins.flex(flex, center, center);
+    flex-direction: column;
+  }
+
+  $titles: (
+    title: variables.$font-weight400,
+    part-title: variables.$font-weight600,
+  );
+
+  @each $class, $font-weight in $titles {
+    &__#{$class} {
+      color: variables.$link-active;
+      font-size: variables.$font-size26;
+      font-weight: $font-weight;
+    }
   }
 
   &__see-all {
@@ -53,6 +67,11 @@
     &__wrapper {
     grid-template-columns: repeat(2, 300px);
   }
+
+  &__title-block {
+    @include mixins.flex(flex, space-between, center);
+    flex-direction: row;
+  }
  }
 }
 
@@ -65,6 +84,18 @@
 
     &__wrapper {
       grid-template-columns: repeat(2, 300px);
+    }
+
+    &__title {
+      font-size: variables.$font-size36;
+    }
+
+    &__part-title {
+      font-size: variables.$font-size36;
+    }
+
+    &__see-all {
+      @include mixins.hoverActive;
     }
   }
 }
@@ -84,7 +115,7 @@
   .iphone {
     padding: 42px 60px 20px 60px;
     &__wrapper {
-      grid-template-columns: repeat(4, 315px);
+      grid-template-columns: repeat(4, 311px);
     }
   }
 }

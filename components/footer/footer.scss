@@ -226,9 +226,19 @@
       &__incor-link,
       &__change-lang {
         &:nth-child(#{$i}) {
-          font-size: 16px;
+          font-size: variables.$font-size16;
         }
       }
+    }
+    
+    @for $i from 1 through 3 {
+      &__incor-link {
+        &_uk {
+          &:nth-child(#{$i}) {
+            font-size: variables.$font-size14;
+          }
+        }
+      }  
     }
 
     &__popup {
@@ -240,9 +250,12 @@
 
 @media(min-width: 1440px) {
   .footer {
-   &__incor-list {
-    margin-right: 245px;
-   }
+    &__incor-list {
+      margin-right: 245px;
+      &_nomg {
+        margin-right: 0px;
+      }
+    }
 
   &__lang-choice {
     font-size: variables.$font-size14;

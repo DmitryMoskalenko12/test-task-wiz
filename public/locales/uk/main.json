@@ -90,5 +90,8 @@
   "USA,-English": "США, Aнглійська",
   "UKR,-ukrainian": "УКР, Українська",
   "english": "English",
-  "ukrainian": "Ukrainian"
+  "ukrainian": "Ukrainian",
+
+  "loading": "...Завантаження",
+  "error": "Упс...помилка"
 }

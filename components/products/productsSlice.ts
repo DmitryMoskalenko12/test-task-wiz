@@ -11,7 +11,7 @@ export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async () => {
    const {request} = useHttp();
-   return await request("http://localhost:3001/products")
+   return await request("https://wizx-d01a6-default-rtdb.firebaseio.com/products.json")
   }
 )
 

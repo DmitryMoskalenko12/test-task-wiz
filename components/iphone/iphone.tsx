@@ -1,19 +1,34 @@
 import { useAppSelector } from "@/store/store";
 import { useAppDispatch } from "@/store/store";
 import { fetchIphone } from "./iphoneSlice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import IphoneCard from "@/module/card/iphoneCard";
 import Link from "next/link";
 import { useTranslation } from 'next-i18next';
+import { IPhoneModel } from "@/types/types";
 
-const Iphone = () => {
-  const iphones = useAppSelector((state) => state.iphone.iphoneArr);
+const Iphone = ({ iphones }: { iphones: IPhoneModel[] }) => {
+  const iphonesArr = useAppSelector((state) => state.iphone.iphoneArr);
+  const [iphonesData, setIphonesData] = useState<IPhoneModel[]>(iphones);
+  const status = useAppSelector((state) => state.iphone.iphoneStatus);
   const dispatch = useAppDispatch();
   const {t} = useTranslation('main');
 
   useEffect(() => {
+   setIphonesData(iphonesArr)
    dispatch(fetchIphone())
   },[])
+
+  useEffect(() => {
+   setIphonesData(iphonesArr)
+  },[status])
+
+
+ const error = status === 'error' ? <div className="iphone__status">{t('error')}</div> : null;
+ const loading = status === 'loading' ? <div className="iphone__status">{t('loading')}</div> : null;
+ const result = status !== 'loading' && status !== 'loading' ? iphonesData.map(({title, price, id, img, filter}) => {
+  return <IphoneCard filter={filter} key={id} title={title} price={price} img={img} id={id}/>
+ }) : null;
 
   return (
     <section className="iphone iphone_bg">
@@ -28,11 +43,9 @@ const Iphone = () => {
             </Link>
         </div>
         <div className="iphone__wrapper">
-           {
-            iphones.map(({title, price, id, img}) => {
-             return <IphoneCard key={id} title={title} price={price} img={img} id={id}/>
-            })
-           }
+           {error}
+           {loading}
+           {result}
         </div>
       </div>
     </section>

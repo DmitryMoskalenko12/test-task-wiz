@@ -11,7 +11,7 @@ export const fetchIphone = createAsyncThunk(
   'iphone/fetchIphone',
   async () => {
    const {request} = useHttp();
-   return await request("http://localhost:3001/iphone")
+   return await request("https://wizx-d01a6-default-rtdb.firebaseio.com/iphone.json")
   }
 )
 

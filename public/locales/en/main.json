@@ -87,10 +87,11 @@
   "legal": "Legal",
   "site-map": "Site Map",
   "USA,-English": "USA, English",
-  "UKR,-ukrainian": "USA, Ukrainian",
+  "UKR,-ukrainian": "UKR, Ukrainian",
   "english": "English",
-  "ukrainian": "Ukrainian"
+  "ukrainian": "Ukrainian",
 
-
+  "loading": "...Loading",
+  "error": "Opps...error"
 
 }

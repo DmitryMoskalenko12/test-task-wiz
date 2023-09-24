@@ -4,6 +4,7 @@ import { useState } from 'react';
 import cn from 'classnames';
 import React from 'react';
 import { useRouter } from 'next/router';
+import { shopLearnArr, appleStore, forBusiness, forEducation, entertainment, wallet, incorList, forHealthcare, account } from '@/helpers/helpers';
 
 const Footer = () => {
   const [active, setActive] = useState<boolean>(false);
@@ -18,83 +19,15 @@ const Footer = () => {
 
   const {t} = useTranslation('main');
    
-  const shopLearnArr = [
-    {content: t('store'), id: 1},
-    {content: 'Mac', id: 2},
-    {content: 'iPad', id: 3},
-    {content: 'iPhone', id: 4},
-    {content: 'Watch', id: 5},
-    {content: t('vision'), id: 6},
-    {content: 'AirPods', id: 7},
-    {content: 'TV & Home', id: 8},
-    {content: 'AirTag', id: 9},
-    {content: 'AirTag', id: 10},
-    {content: t('gift-cards'), id: 11},
-  ]
-
-   const appleStore = [
-    {content: t('find-a-store'), id: 1},
-    {content: t('genius-bar'), id: 2},
-    {content: t('today-at-apple'), id: 3},
-    {content: 'Apple Camp', id: 4},
-    {content: t('apple-store-app'), id: 5},
-    {content: t('certified-refurbished'), id: 6},
-    {content: 'Apple Trade In', id: 7},
-    {content: t('financing'), id: 8},
-    {content: t('carrier-deals-at-apple'), id: 9},
-    {content: t('order-status'), id: 10},
-    {content: t('shopping-help'), id: 11},
-  ]
-
-  const forBusiness = [
-    {content: t('apple-and-business'), id: 1},
-    {content: t('shop-for-business'), id: 2},
-  ]
-
-  const forEducation = [
-    {content: t('apple-and-education'), id: 1},
-    {content: t('shop-for-K-12'), id: 2},
-    {content: t('shop-for-college'), id: 3},
-  ]
-
-  const forHealthcare = [
-    {content: t('apple-in-healthcare'), id: 1},
-    {content: t('health-on-apple-watch'), id: 2},
-    {content: t('health-records-on-iPhone'), id: 3},
-  ]
-
-  const entertainment = [
-    {content: 'Apple One', id: 1},
-    {content: 'Apple TV+', id: 2},
-    {content: t('apple-music'), id: 3},
-    {content: t('apple-arcade'), id: 4},
-    {content: t('apple-fitness+'), id: 5},
-    {content: t('apple-news+'), id: 6},
-    {content: t('apple-podcasts'), id: 7},
-    {content: t('apple-books'), id: 8},
-    {content: 'App Store', id: 9},
-  ]
-
-  const wallet = [
-    {content: t('wallet'), id: 1},
-    {content: t('apple-card'), id: 2},
-    {content: t('apple-pay'), id: 3},
-    {content: t('apple-cash'), id: 4},
-  ]
-
-  const account = [
-    {content: t('manage-your-apple-ID'), id: 1},
-    {content: t('apple-store-account'), id: 2},
-    {content: t('iCloud-com'), id: 3},
-  ]
-
-  const incorList = [
-    {content: t('privacy-policy'), id: 1},
-    {content: t('terms-of-use'), id: 2},
-    {content: t('sales-and-refunds'), id: 3},
-    {content: t('legal'), id: 4},
-    {content: t('site-map'), id: 5}
-  ]
+  const shopLearn = shopLearnArr(t);
+  const appleStoreArr = appleStore(t);
+  const forBusinessArr = forBusiness(t);
+  const forEducationArr = forEducation(t);
+  const forHealthcareArr = forHealthcare(t);
+  const entertainmentArr = entertainment(t);
+  const walletArr = wallet(t);
+  const accountArr = account(t);
+  const incorListArr = incorList(t);
 
   return (
     <footer className="footer">
@@ -103,7 +36,7 @@ const Footer = () => {
            <ul className='footer__list'>
               <li><h3 className='footer__title'>{t('shop-learn')}</h3></li>
               {
-                shopLearnArr.map(({content, id}) => {
+                shopLearn.map(({content, id}) => {
                   return <li key={id}><Link className='footer__link' href={'/'}>{content}</Link></li>
                 })
               }
@@ -111,7 +44,7 @@ const Footer = () => {
            <ul className='footer__list'>
               <li><h3 className='footer__title'>Apple Store</h3></li>
               {
-                appleStore.map(({content, id}) => {
+                appleStoreArr.map(({content, id}) => {
                   return <li key={id}><Link className='footer__link' href={'/'}>{content}</Link></li>
                 })
               }
@@ -121,7 +54,7 @@ const Footer = () => {
               <ul className='footer__list'>
                 <li><h3 className='footer__title'>{t('for-business')}</h3></li>
                 {
-                  forBusiness.map(({content, id}) => {
+                  forBusinessArr.map(({content, id}) => {
                     return <li key={id}><Link className='footer__link' href={'/'}>{content}</Link></li>
                   })
                 }
@@ -129,7 +62,7 @@ const Footer = () => {
               <ul className='footer__list'>
                 <li><h3 className='footer__title'>{t('for-education')}</h3></li>
                 {
-                  forEducation.map(({content, id}) => {
+                  forEducationArr.map(({content, id}) => {
                     return <li key={id}><Link className='footer__link' href={'/'}>{content}</Link></li>
                   })
                 }
@@ -138,7 +71,7 @@ const Footer = () => {
               <ul className='footer__list'>
                 <li><h3 className='footer__title'>{t('for-healthcare')}</h3></li>
                 {
-                  forHealthcare.map(({content, id}) => {
+                  forHealthcareArr.map(({content, id}) => {
                     return <li key={id}><Link className='footer__link' href={'/'}>{content}</Link></li>
                   })
                 }
@@ -148,7 +81,7 @@ const Footer = () => {
            <ul className='footer__list'>
               <li><h3 className='footer__title'>{t('entertainment')}</h3></li>
               {
-               entertainment.map(({content, id}) => {
+               entertainmentArr.map(({content, id}) => {
                   return <li key={id}><Link className='footer__link' href={'/'}>{content}</Link></li>
                 })
               }
@@ -158,7 +91,7 @@ const Footer = () => {
               <ul className='footer__list'>
                   <li><h3 className='footer__title'>{t('apple-wallet')}</h3></li>
                   {
-                    wallet.map(({content, id}) => {
+                    walletArr.map(({content, id}) => {
                         return <li key={id}><Link className='footer__link' href={'/'}>{content}</Link></li>
                       })
                   }
@@ -166,7 +99,7 @@ const Footer = () => {
               <ul className='footer__list'>
                   <li><h3 className='footer__title'>{t('account')}</h3></li>
                   {
-                    account.map(({content, id}) => {
+                    accountArr.map(({content, id}) => {
                         return <li key={id}><Link className='footer__link' href={'/'}>{content}</Link></li>
                       })
                   }
@@ -178,10 +111,10 @@ const Footer = () => {
 
         <div className='footer__incorp-block'>
           <div className='footer__copyr'>{t('copyright')} © {new Date().getFullYear()} Apple Inc. {t('all-rights-reserved')}.</div>
-          <ul className='footer__incor-list'>
+          <ul className={cn('footer__incor-list', {['footer__incor-list_nomg']: lang === 'uk'})}>
             {
-              incorList.map(({content, id}) => {
-                return <li key={id}><Link className='footer__incor-link' href={'/'}>{content}</Link></li>
+              incorListArr.map(({content, id}) => {
+                return <li key={id}><Link className={cn('footer__incor-link', {['footer__incor-link_uk']: lang === 'uk'})} href={'/'}>{content}</Link></li>
               })
             }
           </ul>

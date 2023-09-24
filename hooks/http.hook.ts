@@ -10,8 +10,16 @@ export const useHttp = () => {
           }
 
           const data = await response.json();
+          const arr = [];
 
-          return data;
+          for (const key in data) {
+            arr.push({
+              id: key,
+              ...data[key]
+            });
+          }
+          
+          return arr;
       } catch(e) {
           throw e;
       }

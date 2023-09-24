@@ -5,12 +5,16 @@ import { useEffect } from "react";
 import IphoneCard from "@/module/card/iphoneCard";
 import { useTranslation } from 'next-i18next';
 import cn from 'classnames';
-
 import { useState } from "react";
+import { Product } from "@/types/types";
 
-const Products = () => {
+const Products = ({ product }: { product: Product[] }) => {
+ 
   const [active, setActive] = useState<number>(1);
+  const [productsData, setProductsData] = useState<Product[]>(product)
   const products = useAppSelector((state) => state.products.productsArr);
+  const status = useAppSelector((state) => state.products.productsStatus);
+
   const dispatch = useAppDispatch();
   const {t} = useTranslation('main');
 
@@ -28,9 +32,19 @@ const Products = () => {
    ]
  
   useEffect(() => {
+   setProductsData(products)
    dispatch(fetchProducts())
   },[])
 
+  useEffect(() => {
+   setProductsData(products)
+  },[status])
+
+ const error = status === 'error' ? <div className="products__status">{t('error')}</div> : null;
+ const loading = status === 'loading' ? <div className="products__status">{t('loading')}</div> : null;
+ const result = status === 'idle' ? productsData.map(({title, price, id, img, filter}) => {
+  return <IphoneCard filter={filter} key={id} title={title} price={price} img={img} id={id}/>
+ }) : null;
 
   return (
     <section className="products products_bg">
@@ -38,18 +52,16 @@ const Products = () => {
       <div className="container">
       <h2 className="products__title">{t('explore')} <span className="products__part-title">{t('product')}</span></h2>
       <div className="products__slider">
-        {
+        { 
           arrButtonSlider.map(({content, id}) => {
             return <button onClick={() => setActive(id)} className={cn("products__slide-but", {['products__slide-but_active']: active === id})} key={id}>{content}</button>
           })
         }
       </div>
         <div className="products__wrapper">
-          {
-            products.map(({title, price, id, img}) => {
-             return <IphoneCard key={id} title={title} price={price} img={img} id={id}/>
-            })
-           }
+          {error}
+          {loading}
+          {result}
         </div>
       </div>
     </section>

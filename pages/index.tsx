@@ -29,7 +29,6 @@ export async function getStaticProps({locale}: { locale: string }) {
       ...(await serverSideTranslations(locale, ['main'])),
       products: products,
       iphones
-    },
-    revalidate: 10000,
+    }
   }
 }

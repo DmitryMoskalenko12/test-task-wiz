@@ -1,8 +1,6 @@
 
 ## Getting Started
-Скачайте проект на свій комп'ютер відкрийте його в IDE і введіть у терміналі npm i потім в
-терміналі введіть json-server db.json --port 3001 для того щоб дані підгрузилися,
-далі запустіть сервер розробки:
+Скачайте проект на свій комп'ютер відкрийте його в IDE і введіть у терміналі npm i потім запустіть сервер розробки:
 ```bash
 npm run dev
 # or
@@ -16,6 +14,7 @@ pnpm dev
 -ReduxToolkit
 -TypeScript
 -SCSS
+-Firebase
 Додатково:
 -i18next, next-i18next
 -classNames

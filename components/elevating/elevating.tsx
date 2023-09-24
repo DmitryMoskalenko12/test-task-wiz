@@ -30,7 +30,7 @@ const Elevating: React.FC = () => {
           </div>
 
            <div className='elevating__slider'>
-             <Image src={'/images/Slider.png'} width={683} height={987} alt='You will see women with Vision Pro'/>
+             <Image src={'/images/slider.png'} width={683} height={987} alt='You will see women with Vision Pro'/>
            </div>
         </div>
       </div>
